@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 MAINTAINER programeriss@gmail.com
 
@@ -52,12 +52,12 @@ RUN apt-get install -y supervisor
 
 # Install & configure xdebug extention
 RUN apt-get install -y php-xdebug
-RUN echo '[xdebug]' >> /etc/php/7.4/apache2/php.ini
-RUN echo 'xdebug.default_enable=1' >> /etc/php/7.4/apache2/php.ini
-RUN echo 'xdebug.idekey=PHPSTORM' >> /etc/php/7.4/apache2/php.ini
-RUN echo 'xdebug.remote_enable=1' >> /etc/php/7.4/apache2/php.ini
-RUN echo 'xdebug.remote_port=9000' >> /etc/php/7.4/apache2/php.ini
-RUN echo 'xdebug.remote_connect_back=1' >> /etc/php/7.4/apache2/php.ini
+RUN echo '[xdebug]' >> /etc/php/8.1/apache2/php.ini
+RUN echo 'xdebug.default_enable=1' >> /etc/php/8.1/apache2/php.ini
+RUN echo 'xdebug.idekey=PHPSTORM' >> /etc/php/8.1/apache2/php.ini
+RUN echo 'xdebug.remote_enable=1' >> /etc/php/8.1/apache2/php.ini
+RUN echo 'xdebug.remote_port=9000' >> /etc/php/8.1/apache2/php.ini
+RUN echo 'xdebug.remote_connect_back=1' >> /etc/php/8.1/apache2/php.ini
 
 #composer
 RUN php -r "readfile('https://getcomposer.org/installer');" | php -- --install-dir=/usr/local/bin --filename=composer
